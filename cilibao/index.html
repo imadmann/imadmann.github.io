@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CILIBAO磁力宝-高效磁力链接搜索与资源聚合导航平台</title>
+    <meta name="description" content="CILIBAO磁力宝是一个专注于磁力链接搜索、BT资源聚合与下载导航的实用平台。提供磁力搜索工具、资源分类导航、下载使用指南与常见问题解答，帮助用户安全高效地查找和获取所需资源。">
+    <meta name="keywords" content="CILIBAO磁力宝,磁力搜索,磁力链接,BT资源,磁力下载,资源导航,种子搜索,磁力搜索引擎">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            padding: 16px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #fbbf24;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 24px;
+        }
+        .main-nav a {
+            color: #cbd5e0;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 6px 8px;
+            border-radius: 4px;
+            transition: color 0.3s, background 0.3s;
+        }
+        .main-nav a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+        .header-tools {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-search-header {
+            background: #fbbf24;
+            color: #1a202c;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-search-header:hover {
+            background: #f59e0b;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(145deg, #1a202c 0%, #1e3a8a 100%);
+            padding: 60px 0 70px;
+            text-align: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .hero h1 span {
+            color: #fbbf24;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #e2e8f0;
+            opacity: 0.9;
+        }
+        .search-box {
+            max-width: 640px;
+            margin: 0 auto;
+            display: flex;
+            background: #fff;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 16px 24px;
+            font-size: 16px;
+            outline: none;
+            color: #2d3748;
+        }
+        .search-box button {
+            background: #fbbf24;
+            border: none;
+            padding: 0 32px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a202c;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .search-box button:hover {
+            background: #f59e0b;
+        }
+        .hero-tags {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .hero-tags a {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #e2e8f0;
+            transition: background 0.3s;
+        }
+        .hero-tags a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        /* 特性 */
+        .features {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a202c;
+        }
+        .section-sub {
+            text-align: center;
+            color: #718096;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+        .feature-card p {
+            color: #718096;
+            font-size: 15px;
+        }
+        /* 分类资源 */
+        .resource-section {
+            padding: 50px 0 60px;
+            background: #fff;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 20px;
+        }
+        .category-item {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            border: 1px solid #edf2f7;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .category-item:hover {
+            border-color: #fbbf24;
+            background: #fffaf0;
+        }
+        .category-item .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .category-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .category-item p {
+            font-size: 13px;
+            color: #a0aec0;
+            margin-top: 4px;
+        }
+        /* 热门资源 */
+        .hot-section {
+            padding: 60px 0;
+        }
+        .hot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .hot-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #edf2f7;
+            transition: box-shadow 0.3s;
+        }
+        .hot-item:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .hot-item .tag {
+            display: inline-block;
+            background: #ebf8ff;
+            color: #2b6cb0;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+        .hot-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .hot-item p {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 12px;
+        }
+        .hot-item .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #a0aec0;
+            border-top: 1px solid #f7fafc;
+            padding-top: 12px;
+        }
+        /* 使用指南 */
+        .guide-section {
+            background: #fff;
+            padding: 60px 0;
+        }
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .guide-step {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 28px;
+            border-left: 4px solid #fbbf24;
+        }
+        .guide-step .num {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+        .guide-step h3 {
+            font-size: 18px;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+        .guide-step p {
+            font-size: 15px;
+            color: #4a5568;
+        }
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            padding: 20px 24px;
+            border: 1px solid #edf2f7;
+        }
+        .faq-item h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a202c;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item h3 span {
+            color: #fbbf24;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .faq-item p {
+            margin-top: 10px;
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        /* 安全提示 */
+        .safety-section {
+            background: #fffaf0;
+            padding: 50px 0;
+            border-top: 1px solid #fbd38d;
+            border-bottom: 1px solid #fbd38d;
+        }
+        .safety-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .safety-icon {
+            font-size: 40px;
+            background: #fff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(251,191,36,0.3);
+            flex-shrink: 0;
+        }
+        .safety-text {
+            flex: 1;
+            min-width: 280px;
+        }
+        .safety-text h2 {
+            font-size: 24px;
+            margin-bottom: 14px;
+            color: #744210;
+        }
+        .safety-text ul {
+            list-style: disc;
+            padding-left: 20px;
+            color: #744210;
+            font-size: 15px;
+        }
+        .safety-text li {
+            margin-bottom: 8px;
+        }
+        /* CTA */
+        .cta-section {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+            color: #fff;
+        }
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .cta-section p {
+            font-size: 17px;
+            margin-bottom: 24px;
+            color: #cbd5e0;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1a202c;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 17px;
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+        /* Footer */
+        .site-footer {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 40px 0 20px;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .footer-col a:hover {
+            color: #fbbf24;
+        }
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                width: 100%;
+                margin-top: 12px;
+            }
+            .main-nav.active {
+                display: block;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            .main-nav a {
+                display: block;
+                padding: 12px 8px;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            .header-tools {
+                margin-left: auto;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 15px;
+                padding: 0 20px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .search-box button {
+                padding: 0 18px;
+                font-size: 14px;
+            }
+            .search-box input {
+                padding: 14px 16px;
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo a {
+                font-size: 22px;
+            }
+            .btn-search-header {
+                display: none;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+            .feature-grid, .hot-grid, .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-item h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#">CILIBAO<span>磁力宝</span></a>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">磁力搜索</a></li>
+                    <li><a href="#">资源分类</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">使用指南</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-tools">
+                <a href="#" class="btn-search-header">开始搜索</a>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 搜索区 -->
+        <section class="hero">
+            <div class="container">
+                <h1>CILIBAO<span>磁力宝</span> - 轻量高效的磁力资源搜索平台</h1>
+                <p>聚合互联网优质BT与磁力资源，提供简洁快速的搜索体验，帮你精准定位所需内容。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="输入关键词，搜索磁力资源...">
+                    <button type="button">磁力搜索</button>
+                </div>
+                <div class="hero-tags">
+                    <a href="#">热门电影</a>
+                    <a href="#">剧集</a>
+                    <a href="#">纪录片</a>
+                    <a href="#">软件工具</a>
+                    <a href="#">电子书</a>
+                    <a href="#">音乐</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心特性 -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">为什么选择磁力宝？</h2>
+                <p class="section-sub">简洁、高效、注重安全与体验的磁力搜索导航工具</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速搜索</h3>
+                        <p>轻量级搜索算法，快速返回匹配结果，节省查找时间。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全提示</h3>
+                        <p>提供资源安全评估与下载建议，帮助识别潜在风险。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🗂️</div>
+                        <h3>分类导航</h3>
+                        <p>清晰的内容分类与标签体系，方便按需浏览发现。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>多端适配</h3>
+                        <p>响应式设计，桌面与移动设备均可流畅使用与浏览。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资源分类导航 -->
+        <section class="resource-section">
+            <div class="container">
+                <h2 class="section-title">资源分类导航</h2>
+                <p class="section-sub">按类别快速定位你需要的磁力资源</p>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <div class="icon">🎬</div>
+                        <h4>电影</h4>
+                        <p>动作 · 喜剧 · 科幻</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">📺</div>
+                        <h4>剧集</h4>
+                        <p>美剧 · 日剧 · 国产</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">📚</div>
+                        <h4>电子书</h4>
+                        <p>小说 · 文学 · 漫画</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">🎵</div>
+                        <h4>音乐</h4>
+                        <p>无损 · 流行 · 古典</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">💻</div>
+                        <h4>软件工具</h4>
+                        <p>系统 · 办公 · 开发</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">🎮</div>
+                        <h4>游戏</h4>
+                        <p>单机 · 联机 · 复古</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">📦</div>
+                        <h4>资料合集</h4>
+                        <p>教程 · 素材 · 模板</p>
+                    </div>
+                    <div class="category-item">
+                        <div class="icon">🌐</div>
+                        <h4>其他资源</h4>
+                        <p>更多分类持续更新</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门资源推荐 -->
+        <section class="hot-section">
+            <div class="container">
+                <h2 class="section-title">近期热门资源</h2>
+                <p class="section-sub">根据社区热度整理的资源参考（仅作展示示例）</p>
+                <div class="hot-grid">
+                    <div class="hot-item">
+                        <span class="tag">电影</span>
+                        <h4>科幻大片《星际穿越》4K 重制版</h4>
+                        <p>高分经典科幻电影，IMAX增强画质，磁力资源热度极高。</p>
+                        <div class="meta"><span>大小: 42.5GB</span><span>热度: ★★★★☆</span></div>
+                    </div>
+                    <div class="hot-item">
+                        <span class="tag">剧集</span>
+                        <h4>年度悬疑剧《漫长的季节》全集</h4>
+                        <p>国产口碑悬疑剧，剧情紧凑，画质精良，社区讨论热烈。</p>
+                        <div class="meta"><span>大小: 18.2GB</span><span>热度: ★★★★★</span></div>
+                    </div>
+                    <div class="hot-item">
+                        <span class="tag">电子书</span>
+                        <h4>《三体》全集精校版 EPUB</h4>
+                        <p>刘慈欣科幻巨作，精校排版，适合各种阅读设备。</p>
+                        <div class="meta"><span>大小: 12MB</span><span>热度: ★★★★☆</span></div>
+                    </div>
+                    <div class="hot-item">
+                        <span class="tag">软件</span>
+                        <h4>跨平台下载工具 Aria2 配置整合包</h4>
+                        <p>含常用配置与前端面板，方便配合磁力链接高效下载。</p>
+                        <div class="meta"><span>大小: 85MB</span><span>热度: ★★★☆☆</span></div>
+                    </div>
+                    <div class="hot-item">
+                        <span class="tag">音乐</span>
+                        <h4>周杰伦经典专辑合集 FLAC 无损</h4>
+                        <p>多张经典专辑打包，FLAC无损格式，音乐爱好者收藏。</p>
+                        <div class="meta"><span>大小: 2.1GB</span><span>热度: ★★★★☆</span></div>
+                    </div>
+                    <div class="hot-item">
+                        <span class="tag">资料</span>
+                        <h4>UI设计全套教程与素材包</h4>
+                        <p>含设计规范、图标源文件、视频教程，适合设计师进阶。</p>
+                        <div class="meta"><span>大小: 8.6GB</span><span>热度: ★★★☆☆</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指南 -->
+        <section class="guide-section">
+            <div class="container">
+                <h2 class="section-title">磁力资源使用指南</h2>
+                <p class="section-sub">从搜索到下载的完整流程与建议</p>
+                <div class="guide-grid">
+                    <div class="guide-step">
+                        <div class="num">01</div>
+                        <h3>精确搜索关键词</h3>
+                        <p>使用资源名称 + 年份/版本/分辨率等限定词，如“电影名 2024 4K”，能显著提升结果匹配度。</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="num">02</div>
+                        <h3>识别资源质量</h3>
+                        <p>观察资源标题中的清晰度标识（1080p、4K、REMUX等）、文件大小与文件数，可辅助判断画质与完整性。</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="num">03</div>
+                        <h3>选择合适工具</h3>
+                        <p>下载磁力链接需使用支持BT协议的客户端，如qBittorrent、Motrix、Transmission等，建议选择开源软件以降低风险。</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="num">04</div>
+                        <h3>注意网络安全</h3>
+                        <p>下载后先进行病毒扫描，避免运行来源不明的可执行文件。尽量选择文件结构清晰、评论良好的资源。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 安全提示条 -->
+        <section class="safety-section">
+            <div class="container safety-content">
+                <div class="safety-icon">⚠️</div>
+                <div class="safety-text">
+                    <h2>安全使用提示</h2>
+                    <ul>
+                        <li>请遵守所在地法律法规，仅下载与分享拥有合法授权的资源。</li>
+                        <li>注意保护个人隐私，建议在下载时使用VPN或代理服务。</li>
+                        <li>避免点击来源不明的广告或诱导链接，谨防钓鱼网站。</li>
+                        <li>磁力链接本身不含病毒，但下载的文件可能存在风险，务必谨慎处理。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <p class="section-sub">关于磁力搜索与下载的疑问，这里或许有答案</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>什么是磁力链接？<span>＋</span></h3>
+                        <p>磁力链接（Magnet URI）是一种通过哈希值标识资源的链接形式。它不直接指向文件，而是通过BT网络中的节点获取文件信息，实现去中心化的文件共享。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>为什么有的磁力链接无法下载？<span>＋</span></h3>
+                        <p>可能原因包括：资源无有效做种节点、网络环境限制、下载工具设置问题、资源已被屏蔽等。建议尝试更换下载工具或等待资源热度回升。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>CILIBAO磁力宝是资源下载站吗？<span>＋</span></h3>
+                        <p>不是。磁力宝是一个磁力搜索与导航平台，本身不存储任何资源文件，而是提供搜索入口、分类导航与使用指导，帮助用户在海量信息中定位资源。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>搜索时如何提高结果质量？<span>＋</span></h3>
+                        <p>建议使用“资源名 + 空格 + 关键属性”的方式，例如“电影名 1080p”、“软件名 绿色版”。同时可以结合分类筛选与排序功能快速过滤结果。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>下载速度很慢怎么办？<span>＋</span></h3>
+                        <p>速度取决于资源做种人数与你的网络环境。可尝试：选择做种数多的资源、更换下载工具、开启协议加密、检查防火墙设置，或使用支持磁力转换的网盘工具。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>磁力搜索是否合法？<span>＋</span></h3>
+                        <p>搜索行为本身并不违法，但下载和传播未经授权的内容可能侵犯版权。请务必确认资源的合法性，并遵守当地法律法规。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 区块 -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>开始高效搜索磁力资源</h2>
+                <p>收藏 CILIBAO磁力宝，让资源查找变得更简单、更安全。</p>
+                <a href="#" class="cta-btn">立即开启搜索</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>CILIBAO磁力宝</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">加入收藏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源导航</h4>
+                    <ul>
+                        <li><a href="#">电影资源</a></li>
+                        <li><a href="#">剧集资源</a></li>
+                        <li><a href="#">软件下载</a></li>
+                        <li><a href="#">电子书库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">使用教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">安全指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情提示</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 CILIBAO磁力宝 · 本平台仅提供信息搜索与导航服务，不存储任何资源文件，请遵守相关法律法规。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        });
+        // FAQ 折叠交互
+        document.querySelectorAll('.faq-item h3').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var p = this.nextElementSibling;
+                if (p.style.display === 'none' || p.style.display === '') {
+                    p.style.display = 'block';
+                    this.querySelector('span').textContent = '－';
+                } else {
+                    p.style.display = 'none';
+                    this.querySelector('span').textContent = '＋';
+                }
+            });
+            // 默认隐藏回答
+            var p = item.nextElementSibling;
+            if (p) {
+                p.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+  </html>
