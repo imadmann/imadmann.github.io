@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驱鬼符-传统符咒文化科普与实用知识指南</title>
+    <meta name="description" content="深入了解驱鬼符的由来、种类、绘制方法与正确使用方式，带你走进传统符咒文化的世界，了解民间习俗与精神寄托背后的文化内涵。">
+    <meta name="keywords" content="驱鬼符,符咒,道教符箓,驱邪避鬼,镇宅符,平安符,黄纸朱砂,画符方法">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+            background: #f3ede4;
+            color: #2b2b2b;
+            line-height: 1.75;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #1e1a17 0%, #3b2d23 100%);
+            padding: 18px 0;
+            border-bottom: 4px solid #b8860b;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            font-size: 36px;
+            filter: drop-shadow(0 0 6px rgba(184, 134, 11, 0.5));
+        }
+        .logo-text h1 {
+            font-size: 28px;
+            color: #e8d5a3;
+            letter-spacing: 6px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .logo-text p {
+            font-size: 12px;
+            color: #b8a888;
+            letter-spacing: 2px;
+        }
+        .header-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+        .header-nav a {
+            color: #d9cba8;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .header-nav a:hover {
+            color: #f0d78c;
+            border-bottom-color: #b8860b;
+        }
+        /* 首屏横幅 */
+        .hero {
+            background: linear-gradient(rgba(20, 15, 10, 0.72), rgba(20, 15, 10, 0.72)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="%232a1f18"/><path d="M20 20 L35 35 M80 20 L65 35 M20 80 L35 65 M80 80 L65 65 M50 10 L50 30 M50 70 L50 90 M10 50 L30 50 M70 50 L90 50" stroke="%23b8860b" stroke-width="1.5" opacity="0.3"/><circle cx="50" cy="50" r="8" fill="none" stroke="%23b8860b" stroke-width="1" opacity="0.4"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 70px 20px;
+            text-align: center;
+            color: #f0e6d2;
+            border-bottom: 3px solid #b8860b;
+        }
+        .hero h2 {
+            font-size: 42px;
+            letter-spacing: 10px;
+            margin-bottom: 16px;
+            font-weight: 400;
+            text-shadow: 3px 3px 8px #000;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 12px;
+            opacity: 0.9;
+        }
+        .hero .sub-ornament {
+            color: #d4af37;
+            font-size: 16px;
+            letter-spacing: 4px;
+        }
+        /* 导览卡片 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            background: #fff9f0;
+            padding: 18px 20px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e4d6c0;
+        }
+        .quick-nav a {
+            color: #5a3e2b;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .quick-nav a:hover {
+            color: #b8860b;
+            transform: translateY(-2px);
+        }
+        /* 内容区 */
+        .content-section {
+            padding: 45px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section-title h2 {
+            font-size: 28px;
+            color: #3b2d23;
+            display: inline-block;
+            padding: 0 20px 10px;
+            border-bottom: 3px double #b8860b;
+            letter-spacing: 4px;
+        }
+        .section-title p {
+            margin-top: 8px;
+            color: #7a6a58;
+            font-size: 14px;
+        }
+        /* 关于卡片 */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .intro-article {
+            background: #fffdf8;
+            padding: 30px;
+            border-left: 6px solid #b8860b;
+            box-shadow: 0 4px 12px rgba(60, 40, 20, 0.08);
+        }
+        .intro-article h3 {
+            font-size: 22px;
+            color: #4a3220;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .intro-article p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        .intro-article .dropcap::first-letter {
+            font-size: 42px;
+            float: left;
+            line-height: 1.2;
+            margin-right: 8px;
+            font-weight: bold;
+            color: #b8860b;
+        }
+        .legend-panel {
+            background: #2b1f16;
+            color: #e0cfae;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        .legend-panel h3 {
+            color: #e6c878;
+            font-size: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            border-bottom: 1px dashed #6b563e;
+            padding-bottom: 8px;
+        }
+        .legend-panel ul {
+            list-style: none;
+        }
+        .legend-panel li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #4d3a28;
+            font-size: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+        }
+        .legend-panel li::before {
+            content: "✦";
+            color: #b8860b;
+            font-size: 12px;
+        }
+        /* 分类卡片区域 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .category-card {
+            background: #fff8ec;
+            border: 1px solid #e0d0b8;
+            border-top: 4px solid #a87532;
+            padding: 24px 20px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .category-card h3 {
+            font-size: 20px;
+            color: #4a2c14;
+            margin-bottom: 12px;
+        }
+        .category-card .card-icon {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .category-card p {
+            font-size: 14px;
+            color: #5e4f3a;
+        }
+        /* 步骤与指南 */
+        .steps-wrap {
+            background: #e8dfd0;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .step-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px dashed #b8a68e;
+        }
+        .step-item:last-child {
+            border-bottom: none;
+        }
+        .step-num {
+            font-size: 28px;
+            font-weight: bold;
+            color: #b8860b;
+            min-width: 50px;
+            text-align: center;
+            background: #fff3dd;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+        }
+        .step-content h4 {
+            font-size: 18px;
+            color: #3f2d1c;
+            margin-bottom: 6px;
+        }
+        .step-content p {
+            font-size: 14px;
+            color: #3f2d1c;
+        }
+        /* 常见问题 */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fffaf2;
+            border: 1px solid #dfcfb9;
+            margin-bottom: 12px;
+            padding: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 15px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #f6ede0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: #3b2a19;
+        }
+        .faq-question::after {
+            content: "+";
+            font-size: 22px;
+            color: #b8860b;
+        }
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fffdf8;
+            font-size: 15px;
+            color: #4d3e2e;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+            padding: 15px 25px;
+            border-top: 1px solid #eee0cd;
+        }
+        .faq-item.active .faq-question::after {
+            content: "−";
+        }
+        /* 注意事项 */
+        .notice-box {
+            background: #f3e9d8;
+            border: 1px solid #c9ad7e;
+            border-left: 6px solid #8b6914;
+            padding: 24px 28px;
+            border-radius: 0 10px 10px 0;
+            margin: 25px 0;
+        }
+        .notice-box h3 {
+            color: #5f4a23;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .notice-box ul {
+            padding-left: 20px;
+        }
+        .notice-box li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #1e1a17;
+            color: #9b8b78;
+            padding: 35px 0 25px;
+            margin-top: 40px;
+            border-top: 4px solid #b8860b;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-about {
+            max-width: 400px;
+        }
+        .footer-about h4 {
+            color: #d4b978;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .footer-about p {
+            font-size: 14px;
+        }
+        .footer-links a {
+            color: #9b8b78;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .footer-links a:hover {
+            color: #d4b978;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #2e2a26;
+            font-size: 13px;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .header-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+            .hero {
+                padding: 45px 15px;
+            }
+            .hero h2 {
+                font-size: 30px;
+                letter-spacing: 6px;
+            }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+            .logo-text h1 {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 480px) {
+            .wrapper {
+                padding: 0 12px;
+            }
+            .section-title h2 {
+                font-size: 22px;
+            }
+            .step-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .step-num {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <div class="logo-area">
+                <span class="logo-icon">☯</span>
+                <div class="logo-text">
+                    <h1>驱鬼符</h1>
+                    <p>符咒文化 · 传统智慧</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#origin">源流</a></li>
+                    <li><a href="#types">符的种类</a></li>
+                    <li><a href="#guide">绘制与使用</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#notice">注意事项</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <h2>☯ 驱鬼符 ☯</h2>
+        <p>探秘千年符箓之术，明其源流、辨其种类、晓其用法。以理性视角解读传统民俗中的精神寄托。</p>
+        <p class="sub-ornament">—— 传承文化 · 正信正行 ——</p>
+    </section>
+
+    <!-- 快捷导航 -->
+    <div class="quick-nav wrapper" style="margin-top:-10px;">
+        <a href="#origin">📜 符咒源流</a>
+        <a href="#types">📖 常见分类</a>
+        <a href="#guide">✍️ 绘制方法</a>
+        <a href="#faq">❓ 疑问解答</a>
+        <a href="#notice">⚠️ 注意事项</a>
+    </div>
+
+    <main>
+        <!-- 源流与简介 -->
+        <section class="content-section" id="origin">
+            <div class="wrapper">
+                <div class="section-title">
+                    <h2>驱鬼符的源流与意义</h2>
+                    <p>从历史长河看符咒文化的形成</p>
+                </div>
+                <div class="intro-grid">
+                    <article class="intro-article">
+                        <h3><span>☰</span> 何为驱鬼符</h3>
+                        <p class="dropcap">驱鬼符，是传统符箓文化中的一种，承载着古人驱邪避祟、祈求平安的朴素愿望。它多见于道教仪式与民间习俗中，通常以黄纸、朱砂等材料绘制特定图形与文字，被认为具有镇伏邪祟、安定家宅的作用。在漫长的历史演进中，驱鬼符早已超越了单纯的“法术”范畴，成为中华民俗文化中一种独特的符号表达。</p>
+                        <p>从文化视角来看，驱鬼符反映了先民面对未知力量时的心理诉求。它既是一种精神寄托，也体现了古代社会对秩序、安宁的向往。今天，我们更应从文化遗产的角度去理解它——那些繁复的线条与符文，实际上是古人宇宙观、道德观的一种具象化呈现。</p>
+                        <p>需要注意的是，驱鬼符并非科学产物，其效果更多体现在心理慰藉与仪式感层面。在了解它时，应保持理性与尊重的态度，既不盲目迷信，也不全盘否定其文化价值。</p>
+                    </article>
+                    <aside class="legend-panel">
+                        <h3>☯ 符箓小传</h3>
+                        <ul>
+                            <li><strong>先秦时期：</strong>符的雏形源于信物与调兵凭证。</li>
+                            <li><strong>东汉道教：</strong>张道陵创五斗米道，符箓成为重要法器。</li>
+                            <li><strong>魏晋南北朝：</strong>上清、灵宝等派系丰富了符箓体系。</li>
+                            <li><strong>唐宋时期：</strong>符咒文化影响扩大，深入民间生活。</li>
+                            <li><strong>明清至今：</strong>演变为民俗传统，多见于节庆与建筑习俗。</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类 -->
+        <section class="content-section" style="background:#faf5ec;" id="types">
+            <div class="wrapper">
+                <div class="section-title">
+                    <h2>驱鬼符的常见种类</h2>
+                    <p>不同用途对应不同的符箓形式</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="card-icon">🏠</span>
+                        <h3>镇宅符</h3>
+                        <p>用于安定家宅气场，常贴于门楣或中堂。民间认为可防外邪侵扰，保阖家平安。此类符箓多含“镇”“安”等字样，图形沉稳庄重。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="card-icon">🚪</span>
+                        <h3>门神符</h3>
+                        <p>贴于门户之上，寓意阻挡不洁之物入门。其形式多为对称图形，或附有神荼、郁垒等神名，是民间常见的门户守护符号。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="card-icon">👤</span>
+                        <h3>随身护身符</h3>
+                        <p>折叠后置于锦囊中随身携带，或系于腰间、贴身衣物内。多为小型符纸，旨在护佑出行平安、远离惊扰。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="card-icon">🌙</span>
+                        <h3>安梦符</h3>
+                        <p>针对夜梦不安、易受惊扰的情况，民间有将此类符置于枕下的做法。图案常包含宁静意象，寄托安眠顺遂的愿望。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="card-icon">⚰️</span>
+                        <h3>净秽符</h3>
+                        <p>用于传统仪式中清理场地，或在新居入住时使用。其内涵在于“除旧布新”，表达对洁净环境的追求。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="card-icon">📜</span>
+                        <h3>退煞符</h3>
+                        <p>民俗中认为某些方位或时段存在“煞气”，退煞符便用于化解此类不利影响。其样式多变，常结合方位与节气绘制。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 绘制与使用指南 -->
+        <section class="content-section" id="guide">
+            <div class="wrapper">
+                <div class="section-title">
+                    <h2>传统绘制与使用指南</h2>
+                    <p>以文化视角了解仪式流程</p>
+                </div>
+                <div class="steps-wrap">
+                    <div class="step-item">
+                        <div class="step-num">壹</div>
+                        <div class="step-content">
+                            <h4>择时与净心</h4>
+                            <p>传统上认为绘制符箓需选择吉日良辰，绘制者需沐浴更衣、静心凝神。这一过程旨在表达对仪式的敬重。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">贰</div>
+                        <div class="step-content">
+                            <h4>备材</h4>
+                            <p>常用材料为黄纸、朱砂与毛笔。黄纸象征五行之土，朱砂色赤属阳，在民俗中具有特殊象征意义。墨汁也有使用，但以朱砂最为传统。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">叁</div>
+                        <div class="step-content">
+                            <h4>绘制符文</h4>
+                            <p>笔画顺序与结构皆有讲究。符头、符窍、符脚构成基本框架，不同流派有各自的传承样式。整个过程需一气呵成，忌讳中断。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">肆</div>
+                        <div class="step-content">
+                            <h4>使用与供奉</h4>
+                            <p>绘制完成的符箓可按用途张贴、佩戴或焚烧化水（民俗做法）。多数情况下需保持干燥洁净，避免污损。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 注意事项 -->
+        <section class="content-section wrapper" id="notice">
+            <div class="notice-box">
+                <h3>⚠️ 理性看待驱鬼符</h3>
+                <ul>
+                    <li><strong>文化价值：</strong>驱鬼符是民俗文化载体，值得从历史、艺术角度研究。</li>
+                    <li><strong>不迷信：</strong>任何符咒都不能替代科学医疗与正规心理咨询。若遇困扰，请寻求专业帮助。</li>
+                    <li><strong>法律边界：</strong>利用迷信手段骗取财物属于违法行为，请提高警惕。</li>
+                    <li><strong>尊重传统：</strong>若参与民俗活动，应尊重当地习俗与传承人的规范。</li>
+                    <li><strong>安全第一：</strong>朱砂含汞化合物，切勿食用，绘制后请洗手。焚烧时注意防火。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="content-section" id="faq" style="background:#faf5ec;">
+            <div class="wrapper">
+                <div class="section-title">
+                    <h2>关于驱鬼符的常见疑问</h2>
+                    <p>汇集大家最关心的问题</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">驱鬼符真的有用吗？</div>
+                        <div class="faq-answer">
+                            <p>从科学角度而言，没有证据表明符咒具有超自然力量。它的作用更多体现在心理层面——为使用者提供安心感与积极暗示。在传统文化语境中，它被视为一种精神寄托。建议以平常心看待，勿过度依赖。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">可以自己画驱鬼符吗？</div>
+                        <div class="faq-answer">
+                            <p>从民俗角度看，传统上需经过师承传授才能掌握符箓的绘制。若仅出于兴趣临摹，作为书法或美术练习并无不可，但不宜宣称具有“法力”。尊重传统，也请保持理性。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">驱鬼符与道教有什么关系？</div>
+                        <div class="faq-answer">
+                            <p>符箓是道教法术体系的重要组成部分，尤其在正一派中传承有序。但民间流传的许多驱鬼符已经过演变，与正统道教仪式有所区别。了解时需区分民俗与宗教的差异。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何正确看待家里的老符纸？</div>
+                        <div class="faq-answer">
+                            <p>如果家中有长辈留下的符纸，建议将其视为家族记忆或民俗物件妥善保存。若已破损，可用红纸包好后恭敬处理，或咨询民俗学者。切勿随意丢弃，尊重长辈的信仰。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">晚上害怕时可以念什么？</div>
+                        <div class="faq-answer">
+                            <p>若因恐惧难以入睡，建议开灯、听舒缓音乐或与家人朋友沟通。也可通过调整睡眠环境、进行放松训练来缓解。传统民俗中有念诵佛号或圣号的习惯，但最有效的方式仍是寻求心理支持。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4>关于本页</h4>
+                    <p>这是一个致力于以理性、客观的视角介绍传统符咒文化的知识页面。我们尊重民俗传统，但倡导科学与理性思维。本站内容仅供参考，不构成任何迷信诱导。</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="color:#d4b978; margin-bottom:10px;">栏目导航</h4>
+                    <a href="#origin">符咒源流</a>
+                    <a href="#types">常见分类</a>
+                    <a href="#guide">绘制指南</a>
+                    <a href="#faq">常见问题</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 驱鬼符文化网 · 传承文化，理性认知 · 本站内容仅为文化科普</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 展开与收起
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            var question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                var isActive = item.classList.contains('active');
+                // 关闭其他
+                document.querySelectorAll('.faq-item').forEach(function(otherItem) {
+                    otherItem.classList.remove('active');
+                });
+                // 如果当前未激活，则激活
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
