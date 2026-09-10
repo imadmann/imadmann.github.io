@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两只老虎伴奏-经典儿歌伴奏在线试听与下载指南</title>
+    <meta name="description" content="两只老虎伴奏专题页，提供经典儿歌两只老虎的伴奏音乐试听、歌词、简谱、使用场景及下载建议，帮助家长、老师和音乐爱好者找到合适的伴奏资源。">
+    <meta name="keywords" content="两只老虎伴奏,两只老虎,儿歌伴奏,儿童歌曲伴奏,伴奏下载,两只老虎简谱">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background: #fdf8f0;
+            color: #3a2e28;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .site-header {
+            background: #fff9ef;
+            border-bottom: 3px solid #f5c97b;
+            padding: 15px 0;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            font-size: 36px;
+        }
+        .logo-text {
+            font-size: 26px;
+            font-weight: 800;
+            color: #e07a2f;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            font-size: 14px;
+            color: #9b7b5e;
+            display: block;
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+        .header-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .header-nav a {
+            text-decoration: none;
+            color: #5a4636;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .header-nav a:hover {
+            border-bottom-color: #e07a2f;
+            color: #e07a2f;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #ffe9c7 0%, #ffd9a3 100%);
+            border-radius: 24px;
+            margin: 30px 0 25px;
+            padding: 45px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "♪";
+            position: absolute;
+            right: 20px;
+            bottom: -30px;
+            font-size: 180px;
+            color: rgba(224, 122, 47, 0.12);
+            line-height: 1;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #b3541e;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 17px;
+            color: #5a3e2e;
+            max-width: 720px;
+            margin-bottom: 8px;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: #fff;
+            color: #b3541e;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* 试听卡片 */
+        .player-section {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 28px;
+            box-shadow: 0 4px 18px rgba(180, 120, 60, 0.08);
+            margin-bottom: 35px;
+            border: 1px solid #f3e2d0;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #3a2e28;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: "";
+            width: 6px;
+            height: 26px;
+            background: #e07a2f;
+            border-radius: 4px;
+        }
+        .section-sub {
+            color: #8b7b6b;
+            font-size: 15px;
+            margin-bottom: 22px;
+            margin-left: 16px;
+        }
+        .music-flex {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fdf6ec;
+            border-radius: 16px;
+            padding: 18px 22px;
+            flex-wrap: wrap;
+        }
+        .music-cover {
+            width: 80px;
+            height: 80px;
+            background: #f2c98d;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+        .music-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .music-info h3 {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .music-info p {
+            color: #7d6a58;
+            font-size: 14px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 22px;
+            border-radius: 40px;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: #e07a2f;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #c9651f;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #e07a2f;
+            color: #e07a2f;
+        }
+        .btn-outline:hover {
+            background: #fbe8d6;
+        }
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
+
+        /* 歌词与简谱 */
+        .lyric-score-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 18px rgba(180, 120, 60, 0.06);
+            border: 1px solid #f3e2d0;
+        }
+        .card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #3a2e28;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 .icon {
+            font-size: 26px;
+        }
+        .lyric-list {
+            list-style: none;
+            font-size: 16px;
+            color: #4d3f35;
+        }
+        .lyric-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #eee0d0;
+        }
+        .lyric-list li:last-child {
+            border-bottom: none;
+        }
+        .score-placeholder {
+            background: #fdf3e6;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 15px;
+            color: #6b5a4b;
+            margin-top: 10px;
+            font-family: "Courier New", monospace;
+            white-space: pre-line;
+            line-height: 2;
+        }
+        .note-highlight {
+            background: #fff1d6;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #a05b2c;
+            font-weight: 600;
+        }
+
+        /* 场景卡片 */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 30px 0;
+        }
+        .scenario-item {
+            background: #fff;
+            border-radius: 18px;
+            padding: 24px 20px;
+            text-align: center;
+            border: 1px solid #f0e0cf;
+            transition: 0.2s;
+        }
+        .scenario-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(180,120,60,0.12);
+        }
+        .scenario-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        .scenario-item h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .scenario-item p {
+            font-size: 14px;
+            color: #7d6a58;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #fff9ef;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #f0dcc5;
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee0d0;
+            padding: 16px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q .arrow {
+            color: #e07a2f;
+            font-weight: 900;
+        }
+        .faq-a {
+            color: #5f5144;
+            font-size: 15px;
+            margin-top: 8px;
+            padding-left: 0;
+        }
+
+        /* 使用提示 */
+        .tips-box {
+            background: #fff2df;
+            border-left: 5px solid #e07a2f;
+            padding: 20px 24px;
+            border-radius: 0 16px 16px 0;
+            margin: 25px 0;
+        }
+        .tips-box h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #b3541e;
+        }
+        .tips-box ul {
+            padding-left: 20px;
+            color: #5f5144;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #3a2e28;
+            color: #d8c8b8;
+            padding: 35px 0 25px;
+            margin-top: 40px;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-col h4 {
+            color: #f5c97b;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .footer-col a {
+            color: #cbb5a0;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: #fff;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #5a4636;
+            font-size: 13px;
+            color: #a08e7c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .lyric-score-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .scenario-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .header-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero {
+                padding: 30px 20px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+            .music-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <span class="logo-icon">🎵</span>
+            <div class="logo-text">两只老虎伴奏<span>儿歌 · 经典 · 亲子</span></div>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">伴奏试听</a></li>
+                <li><a href="#">歌词简谱</a></li>
+                <li><a href="#">使用场景</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- Hero 首屏 -->
+    <section class="hero">
+        <h1>两只老虎伴奏 · 让经典儿歌更动听</h1>
+        <p>《两只老虎》是陪伴几代人成长的经典童谣，旋律简单、节奏明快。这里为您整理了伴奏音乐试听、歌词、简谱参考以及在不同场景下的使用建议，方便家长、幼师和音乐爱好者快速找到所需内容。</p>
+        <span class="hero-tag">♪ 适合 0-6 岁儿童 · 亲子互动 · 课堂教学</span>
+    </section>
+
+    <!-- 在线试听 -->
+    <section class="player-section">
+        <h2 class="section-title">伴奏试听</h2>
+        <p class="section-sub">点击播放按钮，预览标准伴奏效果</p>
+        <div class="music-flex">
+            <div class="music-cover">🐯</div>
+            <div class="music-info">
+                <h3>两只老虎（纯伴奏）</h3>
+                <p>调号：C 大调 ｜ 速度：♩=120 ｜ 时长：约 1 分 30 秒</p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="alert('伴奏播放功能示例：在正式页面中可嵌入音频播放器。')">▶ 试听</button>
+                <button class="btn btn-outline" onclick="alert('下载功能示例：请使用正版音乐平台获取高清伴奏。')">⬇ 下载</button>
+            </div>
+        </div>
+        <p style="font-size: 13px; color: #9b8a79; margin-top: 14px; padding-left: 5px;">※ 试听为演示版本，完整版伴奏请通过正规音乐平台获取。</p>
+    </section>
+
+    <!-- 歌词与简谱 -->
+    <div class="lyric-score-wrapper">
+        <section class="card">
+            <h2><span class="icon">📝</span> 两只老虎 · 歌词</h2>
+            <ul class="lyric-list">
+                <li>两只老虎，两只老虎，</li>
+                <li>跑得快，跑得快。</li>
+                <li>一只没有眼睛，</li>
+                <li>一只没有尾巴，</li>
+                <li>真奇怪！真奇怪！</li>
+            </ul>
+            <p style="font-size: 14px; color: #9b8a79; margin-top: 16px;">歌词简单重复，适合低龄儿童学唱和记忆。</p>
+        </section>
+
+        <section class="card">
+            <h2><span class="icon">🎼</span> 简谱参考（片段）</h2>
+            <div class="score-placeholder">
+                1 2 3 1 ｜ 1 2 3 1 ｜<br>
+                3 4 5 – ｜ 3 4 5 – ｜<br>
+                5 6 5 4 3 1 ｜ 5 6 5 4 3 1 ｜<br>
+                1 5 1 – ｜ 1 5 1 – ｜
+            </div>
+            <p style="font-size: 13px; color: #9b8a79; margin-top: 12px;"><span class="note-highlight">提示</span> 如需完整简谱，建议参考正规音乐教材。</p>
+        </section>
+    </div>
+
+    <!-- 使用场景 -->
+    <section>
+        <h2 class="section-title">伴奏应用场景</h2>
+        <p class="section-sub">不同场景下的使用方式与建议</p>
+        <div class="scenario-grid">
+            <div class="scenario-item">
+                <div class="scenario-icon">🏫</div>
+                <h3>幼儿园教学</h3>
+                <p>配合肢体律动和游戏，帮助小朋友理解节奏与歌词，活跃课堂气氛。</p>
+            </div>
+            <div class="scenario-item">
+                <div class="scenario-icon">👨‍👩‍👧</div>
+                <h3>亲子互动</h3>
+                <p>家庭音乐时间使用，家长可以带宝宝一起拍手、哼唱，增进亲子感情。</p>
+            </div>
+            <div class="scenario-item">
+                <div class="scenario-icon">🎤</div>
+                <h3>演出与活动</h3>
+                <p>儿童节、亲子活动或社区表演时，作为背景伴奏或演唱曲目都很合适。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用提示 -->
+    <aside class="tips-box">
+        <h3>💡 伴奏使用小贴士</h3>
+        <ul>
+            <li>选择伴奏时注意调号是否适合儿童音域，C 调通常较为适中。</li>
+            <li>播放时控制音量，避免对儿童听力造成影响。</li>
+            <li>如需用于公开演出，注意音乐版权，建议使用正版授权伴奏。</li>
+            <li>可以搭配沙锤、铃鼓等小乐器，让节奏体验更丰富。</li>
+        </ul>
+    </aside>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-section">
+        <h2 class="section-title">常见问题</h2>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">两只老虎伴奏有哪些版本？ <span class="arrow">▾</span></div>
+            <div class="faq-a">市面上常见的有纯钢琴版、电子琴版、管弦乐版和亲子律动版等。不同版本适合不同场景，纯钢琴版适合安静环境，律动版更适合活动教学。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">如何判断伴奏是否适合孩子演唱？ <span class="arrow">▾</span></div>
+            <div class="faq-a">首先看调号与音域，C 调或 D 调比较适合儿童；其次听速度，每分钟 110-130 拍较为合适；最后注意伴奏音量不要盖过人声。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">在哪里可以下载正版两只老虎伴奏？ <span class="arrow">▾</span></div>
+            <div class="faq-a">推荐在 QQ 音乐、网易云音乐等正规音乐平台搜索“两只老虎伴奏”，或购买儿童音乐专辑。请避免使用来源不明的文件，以保障音质与版权。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">两只老虎的旋律可以用于即兴改编吗？ <span class="arrow">▾</span></div>
+            <div class="faq-a">作为一首传统童谣，其旋律流传已久。但若涉及商业使用或改编发布，建议咨询版权专业人士，确保合规。</div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-col">
+            <h4>🎵 两只老虎伴奏</h4>
+            <ul>
+                <li>经典儿歌 · 亲子共享</li>
+                <li>让音乐陪伴成长</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>相关资源</h4>
+            <ul>
+                <li><a href="#">儿歌伴奏合集</a></li>
+                <li><a href="#">亲子音乐游戏</a></li>
+                <li><a href="#">音乐启蒙知识</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助与支持</h4>
+            <ul>
+                <li><a href="#">使用指南</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2025 两只老虎伴奏专题页 · 本站仅提供信息参考，伴奏版权归原作者所有
+    </div>
+</footer>
+
+<script>
+    // FAQ 展开/收起
+    function toggleFaq(element) {
+        var answer = element.nextElementSibling;
+        var arrow = element.querySelector('.arrow');
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            arrow.textContent = '▸';
+        } else {
+            answer.style.display = 'block';
+            arrow.textContent = '▾';
+        }
+    }
+    // 初始化 FAQ 为收起状态
+    document.addEventListener('DOMContentLoaded', function() {
+        var answers = document.querySelectorAll('.faq-a');
+        answers.forEach(function(item) {
+            item.style.display = 'none';
+        });
+        var arrows = document.querySelectorAll('.faq-q .arrow');
+        arrows.forEach(function(arrow) {
+            arrow.textContent = '▸';
+        });
+    });
+</script>
+
+</body>
+</html>
